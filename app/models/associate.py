@@ -1,6 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import time
-from typing import List
+from typing import List, Optional
 
 @dataclass
 class AvailabilityBlock:
@@ -11,3 +11,4 @@ class AvailabilityBlock:
 class Associate:
     name: str
     bagging_times: List[AvailabilityBlock]
+    last_cart_end: Optional[time] = field(default=None)
